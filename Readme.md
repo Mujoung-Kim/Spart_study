@@ -39,3 +39,36 @@
 	> $n_{j}$ : 노드에 속하는 수 중 j번째 범주에 속하는 개체수   
  - 계산 예시  
 	![](/data/image/Gini.jpg)
+
+<br>
+
+# Spark
+ - 빅데이터, 전처리, Machine Learning을 쉽게 할 수 있도록 돕는 framework
+ - 빅데이터를 블록으로 나눠서 멀티 프로세스로 분석하기 때문에 빠르게 처리가 가능하다.
+ - 리눅스 환경에서 Hadoop, Hive, 연동해서 사용한다.
+ - 구조 및 구성요소  
+ ![](data/image/Spark.jpg)
+   > SQL : 정형화된 SQL지원한다.  
+   > Streaming : 데이터 스트림을 세그먼트로 나눈 후 각각을 스파크 엔진으로 처리한다.  
+   > MLlib : 회귀, SVM, 의사결정트리, 랜덤포레스트 등 ML 라이브러리를 제공한다.  
+   > GraphX : 페이지 랭크, 레이블 전파, 삼각 계수 등 그래프 알고리즘을 지원한다.  
+   > Core : 분산 처리, 스케줄링, API 인터페이스를 지원한다.  
+   > 작업 처리 레이어 : 스파크만으로 처리할 수도 있고, Hadoop Yarn, Mesos 등과 연동이 가능하다.  
+
+<br>
+
+## RDD(Resilient Distribute Dataset)
+ - 스파크의 기본 추상화 객체
+ - 특징
+   - 불변성(immutable) : 읽기전용
+   - 복원성(resilient) : 장애 내성
+   - 분산성(distributed) : 노드 한 개 이상에 저장된 데이터 셋  
+<br>
+
+## 스파크 클러스터링
+ - 대부분 Hadoop Yarn을 사용하지만 다양한 클러스터 시스템과 연동가능하다.
+ - 연동가능한 클러스터 시스템
+   - Apache Hadoop Yarn
+   - Kubernetes
+   - Apache Mesos
+   - Spark Standalone
