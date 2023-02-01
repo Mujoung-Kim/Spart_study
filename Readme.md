@@ -72,3 +72,39 @@
    - Kubernetes
    - Apache Mesos
    - Spark Standalone
+
+<br>
+
+# 랜덤포레스트(Random Forest)
+ - 여러개의 Decision tree를 결합하여 단일 Decision tree의 단점을 극복했다.
+ - Over-fitting 문제가 적게 발생한다.
+ - 구현이 쉽다.
+ - 병렬 계산이 편하다.
+ - 원본에서 행과 열을 random하게 선택한다.
+   - 원본 데이터의 수 만큼 선택
+   - 같은 행의 데이터는 중복을 허용
+     > Gini index가 다르면 다른 Decision tree로 본다.  
+   - 같은 행의 데이터와 샘플 데이터는 중복을 허용
+   - 선택한 샘플 데이터를 바탕으로 Decision tree 생성
+   - 예시  
+   ![](/data/image/Random_Forest.jpg)
+
+<br>
+
+## 칼럼의 중요도(Gain)
+ - 원본 데이터의 정확도 계산
+ - 하나의 칼럼을 제외한 나머지 칼럼으로 정확도 계산
+ - 원본 데이터의 정확도 - 나머지 칼럼의 정확도
+   > 해당 값이 클수록 중요하다.   
+
+<br>
+
+# Confusion matrix
+ - 계산법
+   - $precision = \frac{a}{a + b + c}$
+   - $recall = \frac{a}{a + b + c}$
+   - $f1_score = 2*\frac{precision*recall}{precision+recall}$
+   - $MacroAvg = \frac{prec0+prec1+prec2}{prec의 개수}$  
+   - $WeightAvg = \frac{prec*a+prec*e+pred*i}{전체개수}$
+ - 예시  
+  ![](data/image/Confusion_Matrix.jpg)
