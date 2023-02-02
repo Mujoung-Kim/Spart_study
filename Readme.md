@@ -108,3 +108,21 @@
    - $WeightAvg = \frac{prec*a+prec*e+pred*i}{전체개수}$
  - 예시  
   ![](data/image/Confusion_Matrix.jpg)
+
+<br>
+
+# XGBoost
+ - 회귀와 분류 문제를 모두 지원하며, 성능과 자원 효율이 좋은 알고리즘이다.
+ - 여러개의 Decision Tree를 조합해서 사용하는 Ensemble 알고리즘이다.
+   > 여러개의 모델을 조합해서 결과를 뽑아내는 방법이다.  
+   > Ensemble은 방식에 따라 Bagging과 Boosting으로 분류된다.  
+ - Bagging은 여러 모델을 사용할 때, 각 모델에서 나온 값을 계산하여, 최종 결과값을 내는 방식이다.  
+  ![](data/image/Bagging.jpg)
+ - Boosting은 샘플링된 데이터에서 값들의 가중치를 반영하여 다음 모델에 넣는 방식으로 예측값을 구한다.  
+  ![](data/image/Boosting.jpg)
+ - Boosting 알고리즘을 구현한 객체
+
+<!-- 결측치
+ - 계산불가
+ - DecisionTree 생성 불가
+   - 평균값 or 0으로 결측치를 바꿈 -->
